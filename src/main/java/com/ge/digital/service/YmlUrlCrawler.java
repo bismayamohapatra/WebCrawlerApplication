@@ -4,7 +4,7 @@ import org.json.simple.JSONArray;
 
 import java.util.Map;
 
-public class YmlCrawler implements Parser {
+public class YmlUrlCrawler implements Parser {
 
     @Override
     public Map<String, JSONArray> parse(String filePath, String startingNode) throws Exception {
