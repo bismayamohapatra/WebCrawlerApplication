@@ -48,19 +48,14 @@ public class JsonUrlCrawler implements Parser {
     private JsonUrlCrawler() {
     }
 
-    public static JsonUrlCrawler getInstance() {
-        synchronized (JsonUrlCrawler.class) {
+     public static JsonUrlCrawler getInstance() {
             if (instance == null) {
                 synchronized (JsonUrlCrawler.class) {
-                    if(instance == null) {
                         instance = new JsonUrlCrawler();
-                    }
                 }
             }
-        }
         return instance;
     }
-
     /**
      *
      * @param filePath
