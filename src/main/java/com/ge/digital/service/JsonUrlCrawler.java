@@ -52,7 +52,9 @@ public class JsonUrlCrawler implements Parser {
         synchronized (JsonUrlCrawler.class) {
             if (instance == null) {
                 synchronized (JsonUrlCrawler.class) {
-                    instance = new JsonUrlCrawler();
+                    if(instance == null) {
+                        instance = new JsonUrlCrawler();
+                    }
                 }
             }
         }
