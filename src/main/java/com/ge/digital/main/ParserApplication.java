@@ -35,10 +35,10 @@ public class ParserApplication {
     private static final Logger logger = Logger.getLogger(ParserApplication.class);
     private static final ResourceBundle bundle = ResourceBundle.getBundle("config");
 
-    public static final Set<String> completed = Collections.newSetFromMap(new ConcurrentHashMap<>());
-    public static final Set<String> success = Collections.newSetFromMap(new ConcurrentHashMap<>());
-    public static final Set<String> skipped = Collections.newSetFromMap(new ConcurrentHashMap<>());
-    public static final Set<String> error = Collections.newSetFromMap(new ConcurrentHashMap<>());
+    public static volatile Set<String> completed = Collections.newSetFromMap(new ConcurrentHashMap<>());
+    public static volatile Set<String> success = Collections.newSetFromMap(new ConcurrentHashMap<>());
+    public static volatile Set<String> skipped = Collections.newSetFromMap(new ConcurrentHashMap<>());
+    public static volatile Set<String> error = Collections.newSetFromMap(new ConcurrentHashMap<>());
 
 
     public static void main(String args[]) throws Exception {
