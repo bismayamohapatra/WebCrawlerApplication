@@ -28,7 +28,7 @@ public class CrawlerAction implements Callable<Page> {
         if(isProcess) {
             return pageMap.get(address);
         }
-        return new Page();
+        return null;
     }
 
     /**
