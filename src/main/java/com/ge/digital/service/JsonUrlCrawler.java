@@ -104,9 +104,11 @@ public class JsonUrlCrawler implements Parser {
         CrawlerAction task = new CrawlerAction(address,pageMaps);
         Future<Page> returnFuture = pool.submit(task);
         Page page = returnFuture.get();
-        for(final String link : page.getLinks()){
-            logger.debug("Creating separate process for processing page : " + link);
-            parsePage(link);
+        if(page != null) {
+            for(final String link : page.getLinks()){
+                logger.debug("Creating separate process for processing page : " + link);
+                parsePage(link);
+            }
         }
     }
 
