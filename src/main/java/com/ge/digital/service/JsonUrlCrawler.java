@@ -39,7 +39,7 @@ public class JsonUrlCrawler implements Parser {
 
     private static final Logger logger = Logger.getLogger(JsonUrlCrawler.class);
     private static final ResourceBundle bundle = ResourceBundle.getBundle("config");
-    private static JsonUrlCrawler instance = null;
+    private static volatile JsonUrlCrawler instance = null;
 
     private JSONArray page = new JSONArray();
     private static final ForkJoinPool pool = new ForkJoinPool(Integer.valueOf(bundle.getString("THREAD_POOL_SIZE")));
